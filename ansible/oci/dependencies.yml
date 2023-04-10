@@ -1,15 +1,13 @@
-#playbook to install oci cli and kubeadm
+#playbook to install oci cli
 
 - hosts: all
   become: yes
 
   tasks:
-    - name: install oci cli
-      shell: bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)" -- --accept-all-defaults
-
     - name: copy the local config file to remote host
       copy:
-        src: C:\Users\rieri\OneDrive\Documentos\Kubernets\ansible\oci\config
-        dest: /home/ansible/.oci/config
+        src: ~/Kubernets/terraform/config
+        dest: ~/.oci/
 
-    
+    - name: restart shell
+      shell: bash -c "$(exec -l $SHELL)"
