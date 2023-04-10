@@ -1,0 +1,11 @@
+#ubuntu image and copy a local paste for the image
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.box_version = "20180424.0.0"
+    config.vm.synced_folder "../../", "/kubernets", disabled: true
+
+    config.vm.provider :virtualbox do |vb|
+        config.vm.network "private_network", ip: "192.168.0.102"
+        config.vm.hostname = "master"
+    end
+end
