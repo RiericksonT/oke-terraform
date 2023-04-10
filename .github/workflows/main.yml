@@ -15,19 +15,19 @@ jobs:
         terraform init
         tflint --terraform-root=terraform
     - name: Packer Build
-      uses: hashicorp/setup-packer@v1
+    - uses: hashicorp/setup-packer@v1
       with:
         packer_version: 1.3.9
     - run: |
         packer validate packer-template.json
         packer build packer-template.json
     - name: Terraform Plan
-      uses: hashicorp/setup-terraform@v1
+    - uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.3.9
     - run: terraform plan
     - name: Terraform Apply
-      uses: hashicorp/setup-terraform@v1
+    - uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: <versão desejada>
     - run: terraform apply -auto-approve
