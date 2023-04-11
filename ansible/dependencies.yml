@@ -1,0 +1,13 @@
+#playbook to install oci cli
+
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: copy the local config file to remote host
+      copy:
+        src: ~/Kubernets/terraform/config
+        dest: ~/.oci/
+
+    - name: restart shell
+      shell: bash -c "$(exec -l $SHELL)"
