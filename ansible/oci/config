@@ -1,6 +1,0 @@
-[DEFAULT]
-user=ocid1.user.oc1..aaaaaaaakhqiyb2tsh3h2zwqltj5tmxmtlrgnofs27qwgui4bo5sb2pcq6uq
-fingerprint=e0:54:b9:d9:fc:16:d9:38:45:6b:a1:06:6d:a5:64:50
-key_file=C:\Users\rieri\.oci\oci_api_key.pem
-tenancy=ocid1.tenancy.oc1..aaaaaaaazv3wapnqqxhlnmtigfknedmrsho6u7xpt56o3mt2evrgepwuzv6q
-region=sa-saopaulo-1
