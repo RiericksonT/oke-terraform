@@ -1,0 +1,42 @@
+- host: all
+  become: yes
+
+  task:
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+
+    - name: run a docker container rancher
+      docker_container:
+        image: rancher/rancher
+        name: rancher
+        restart_policy: always
+        ports:
+          - "80:80"
+          - "443:443"
+          - "8080:8080"
+    
+    - name: wait for rancher to be up
+      wait_for:
+        host: localhost
+        port: 8080
+        delay: 10
+        timeout: 300
+
+

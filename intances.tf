@@ -13,6 +13,7 @@ resource "oci_core_instance" "Controller" {
     assign_public_ip = true
     subnet_id        = oci_core_subnet.subnet-cluster.id
   }
+
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key_file)
   }

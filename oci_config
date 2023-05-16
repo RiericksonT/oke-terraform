@@ -1,0 +1,6 @@
+[DEFAULT]
+tenancy="ocid1.tenancy.oc1..aaaaaaaazv3wapnqqxhlnmtigfknedmrsho6u7xpt56o3mt2evrgepwuzv6q"
+user="ocid1.user.oc1..aaaaaaaakhqiyb2tsh3h2zwqltj5tmxmtlrgnofs27qwgui4bo5sb2pcq6uq"
+fingerprint="e4:f4:f8:23:4d:b1:cc:1e:56:4b:e3:c9:1b:81:d8:25"
+key_file=<PATH_TO_PRIVATE_KEY>
+region="sa-saopaulo-1"

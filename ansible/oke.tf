@@ -7,9 +7,6 @@ resource "local_file" "cluster_kube_config_file" {
   content  = data.oci_containerengine_cluster_kube_config.cluster_kube_config.content
   filename = "config"
 
-  provisioner "local-exec" {
-    command = "export KUBECONFIG=${path.module}/config"
-  }
 }
 
 resource "oci_containerengine_cluster" "oke-cluster" {
